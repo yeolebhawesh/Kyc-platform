@@ -1,0 +1,112 @@
+/* Dashboard wrapper */
+.dashboard-wrapper {
+  min-height: 100vh;
+  padding: 30px;
+  background: linear-gradient(135deg, #6a11cb, #fc2575);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Headings */
+.dashboard-wrapper h2, .dashboard-wrapper h3, .dashboard-wrapper h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+.card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Buttons */
+.card button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #fc2575;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card button:hover {
+  background-color: #6a11cb;
+  transform: translateY(-2px);
+}
+
+/* Client list */
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.client-list button {
+  flex: 1 1 200px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.client-list button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-3px);
+}
+
+/* Documents */
+.documents-list li {
+  margin-bottom: 8px;
+}
+
+.documents-list button {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.documents-list button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Scrollbars for client list */
+.client-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.client-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 4px;
+}
