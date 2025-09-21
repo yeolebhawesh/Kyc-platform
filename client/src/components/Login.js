@@ -9,6 +9,7 @@ function Login({ setToken }) {
   const [error, setError] = useState("");
   const [step, setStep] = useState(1);
   const [adminId, setAdminId] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -37,7 +38,7 @@ function Login({ setToken }) {
     <div className="login-wrapper">
       <div className="login-card">
         <h2>Admin Login</h2>
-        {error && <p>{error}</p>}
+        {error && <p className="error">{error}</p>}
 
         {step === 1 ? (
           <form onSubmit={handleLogin}>
@@ -48,13 +49,24 @@ function Login({ setToken }) {
               onChange={(e) => setUsername(e.target.value)}
               required
             />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            </div>
+
             <button type="submit">Next</button>
           </form>
         ) : (

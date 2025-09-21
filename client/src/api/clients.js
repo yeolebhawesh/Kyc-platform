@@ -30,24 +30,17 @@ export const addClient = async (token, clientData) => {
 };
 
 // UPLOAD documents for a client
-// src/api/clients.js
-
-
 export const uploadDocuments = async (token, clientId, files) => {
   const formData = new FormData();
   files.forEach((file) => formData.append("files", file));
 
-  const res = await axios.post(
-    `http://localhost:5000/api/clients/${clientId}/upload`,
-    formData,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
+  const res = await API.post(`/${clientId}/upload`, formData, {
+    ...withAuth(token),
+    headers: {
+      ...withAuth(token).headers,
+      "Content-Type": "multipart/form-data",
+    },
+  });
 
   return res.data;
 };
- 
