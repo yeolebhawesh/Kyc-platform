@@ -1,9 +1,8 @@
-// src/api/clients.js
 import axios from "axios";
 
-// base axios instance
+// base axios instance – updated to deployed backend URL
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/clients",
+  baseURL: "https://kyc-platform-iu5ehl5v9-bhawesh-yeoles-projects.vercel.app/", // <-- updated URL
 });
 
 // Attach token to every request

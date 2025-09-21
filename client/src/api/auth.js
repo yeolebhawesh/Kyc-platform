@@ -1,9 +1,10 @@
-// client/src/api/auth.js
 import axios from "axios";
+
+const BASE_URL = "https://kyc-platform-iu5ehl5v9-bhawesh-yeoles-projects.vercel.app/"; // <-- updated URL
 
 export const login = async (username, password) => {
   try {
-    const res = await axios.post("http://localhost:5000/auth/login", {
+    const res = await axios.post(`${BASE_URL}/login`, {
       username,
       password,
     });
@@ -15,7 +16,7 @@ export const login = async (username, password) => {
 
 export const verifyMfa = async (adminId, mfaCode) => {
   try {
-    const res = await axios.post("http://localhost:5000/auth/verify-mfa", {
+    const res = await axios.post(`${BASE_URL}/verify-mfa`, {
       adminId,
       token: mfaCode, // 👈 backend expects "token"
     });
